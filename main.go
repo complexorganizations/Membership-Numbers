@@ -12,11 +12,11 @@ import (
 )
 
 var (
-	charactersList  = 0123456789
+	charactersList      = 1234567890
 	cardCharactersCount = 16
-	expCharactersCount = 4
-	csvCharactersCount = 4
-	outputFile      = "output.json"
+	expCharactersCount  = 4
+	csvCharactersCount  = 4
+	outputFile          = "output.json"
 )
 
 type PasswordReport struct {
