@@ -20,10 +20,6 @@ type NumbersReport struct {
 	CVC  int8 `json:"cvc"`
 }
 
-func main() {
-	fmt.Println(test)
-}
-
 func writingInFile(b []byte) {
 	file, err := os.Create(outputFile)
 	if err != nil {
@@ -33,4 +29,10 @@ func writingInFile(b []byte) {
 		fmt.Printf("Error writing to a file %s", err)
 	}
 	file.Close()
+}
+
+func main() {
+	for {
+		fmt.Println(outputFile)
+	}
 }
