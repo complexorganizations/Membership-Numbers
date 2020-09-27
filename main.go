@@ -1,7 +1,21 @@
 package main
 
 import (
-"fmt"
+	"fmt"
+	"io/ioutil"
 )
 
-func main() 
+var (
+	charactersList  = 0123456789
+	charactersCount = 16
+	outputFile      = "output.json"
+)
+
+type NumbersReport struct {
+	DATE string `json:"date"`
+	CVC  string `json:"cvc"`
+}
+
+func main() {
+	fmt.Println(test)
+}
