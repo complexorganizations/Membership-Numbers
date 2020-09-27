@@ -20,6 +20,10 @@ type NumbersReport struct {
 	CVC  int8 `json:"cvc"`
 }
 
+func RandomString() {
+	//
+}
+
 func writingInFile(b []byte) {
 	file, err := os.Create(outputFile)
 	if err != nil {
