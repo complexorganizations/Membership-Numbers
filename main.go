@@ -24,6 +24,14 @@ type MembershipReport struct {
 	EXP    string `json:"sha-256"`
 }
 
+func RandomString() {
+	// generate all the random strings here.
+}
+
+func file() {
+	// write to file and appened to file goes on here.
+}
+
 func main() {
 	//
 }
