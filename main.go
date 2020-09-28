@@ -34,9 +34,18 @@ func RandomString() int {
 }
 
 func file() {
-	// write to file and appened to file goes on here.
+	file, err := os.Create(outputFile)
+	if err != nil {
+		log.Println(err)
+	}
+	if _, err = file.Write(b); err != nil {
+		fmt.Printf("Error writing to a file %s", err)
+	}
+	file.Close()
 }
 
 func main() {
-	//
+	for {
+		// loop everything here.
+	    }
 }
