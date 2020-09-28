@@ -19,13 +19,18 @@ var (
 )
 
 type MembershipReport struct {
-	NUMBER string `json:"md5"`
-	CVC    string `json:"sha-1"`
-	EXP    string `json:"sha-256"`
+	// NUMBER string `json:"card-number"`
+	EXP    string `json:"exp-date"`
+	CVC    string `json:"cvc"`
 }
 
-func RandomString() {
+func RandomString() int {
+	// use a random seed
+	rand.Seed(time.Now().UnixNano())
 	// generate all the random strings here.
+	randInt := rand.Intn(10)
+	// return value
+	return randInt
 }
 
 func file() {
