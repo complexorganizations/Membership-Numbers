@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"io/ioutil"
 )
 
 var (
