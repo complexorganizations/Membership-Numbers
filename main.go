@@ -10,7 +10,6 @@ import (
 
 var (
 	charactersList  = 1234567890
-	charactersCount = 16
 	characterLimit  = 2
 )
 
