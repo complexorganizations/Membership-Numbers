@@ -25,7 +25,7 @@ const (
 	outputFile = "output.json"
 )
 
-type MembershipReport struct {
+type membershipReport struct {
 	EXP []string `json:"exp-date"`
 	CVC []string `json:"cvc"`
 }
@@ -101,9 +101,9 @@ func writingInFile(b []byte) {
 // Calculates the random CVC and Year values
 func writeToJSON(num int64) {
 	// writes data to JSON outputFile
-	result := []map[string]*MembershipReport{}
+	result := []map[string]*membershipReport{}
 
-	data := make(map[string]*MembershipReport)
+	data := make(map[string]*membershipReport)
 
 	key := strconv.FormatInt(num, 10)
 
@@ -111,7 +111,7 @@ func writeToJSON(num int64) {
 
 	expDate := getExpDate()
 
-	data[key] = &MembershipReport{expDate, cvc}
+	data[key] = &membershipReport{expDate, cvc}
 
 	fmt.Println(data)
 
