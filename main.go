@@ -31,7 +31,6 @@ type membershipReport struct {
 }
 
 // Fetches the random int based on given character length
-
 func randomInt(min, max, source int64) int64 {
 	sourceObj := rand.NewSource(source * time.Now().UnixNano())
 	randObj := rand.New(sourceObj)
@@ -65,15 +64,12 @@ func getMinMax(length int) (low int64, high int64) {
 	//returns min and max values of given character length
 	min := "1"
 	max := "9"
-
 	for i := 1; i < length; i++ {
 		min = min + "0"
 		max = max + "9"
 	}
-
 	low, _ = strconv.ParseInt(min, 10, 64)
 	high, _ = strconv.ParseInt(max, 10, 64)
-
 	return
 }
 
@@ -102,19 +98,12 @@ func writingInFile(b []byte) {
 func writeToJSON(num int64) {
 	// writes data to JSON outputFile
 	result := []map[string]*membershipReport{}
-
 	data := make(map[string]*membershipReport)
-
 	key := strconv.FormatInt(num, 10)
-
 	cvc := getCVC()
-
 	expDate := getExpDate()
-
 	data[key] = &membershipReport{expDate, cvc}
-
 	fmt.Println(data)
-
 	if !fileExists(outputFile) {
 		//simple append
 		result = append(result, data)
@@ -130,12 +119,10 @@ func writeToJSON(num int64) {
 	if err != nil {
 		log.Fatalln("Error while reading: ", err)
 	}
-
 	err = json.Unmarshal(byteValue, &result)
 	if err != nil {
 		log.Fatalln("Error while marshaling: ", err)
 	}
-
 	isFound := false
 	for _, r := range result {
 		if reflect.DeepEqual(r, data) {
@@ -143,12 +130,10 @@ func writeToJSON(num int64) {
 			break
 		}
 	}
-
 	if isFound {
 		fmt.Println("Duplicate Found.")
 		return
 	}
-
 	//appending
 	result = append(result, data)
 	b, err := json.Marshal(&result)
